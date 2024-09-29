@@ -21,9 +21,9 @@ export default function RootLayout({
         <nav className="bg-gray-800 text-white p-4">
           <ul className="flex space-x-4">
             <li><Link href="/">Home</Link></li>
-            <li><Link href="/pages/login">Login</Link></li>
-            <li><Link href="/pages/register">Register</Link></li>
-            <li><Link href="/pages/chat">Chat</Link></li>
+            <li><Link href="/login">Login</Link></li>
+            <li><Link href="/register">Register</Link></li>
+            <li><Link href="/chat">Chat</Link></li>
           </ul>
         </nav>
         {children}
