@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from openai import OpenAI
+import openai
 import os
 
 
@@ -17,7 +18,7 @@ app.add_middleware(
 )
 
 # Set up your OpenAI API key using .env
-open.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
 # Initialize the OpenAI client
