@@ -28,7 +28,7 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-screen bg-gray-100 overflow-hidden">
+    <div className="relative flex flex-col items-center justify-center min-h-screen bg-black-100 overflow-hidden">
       <GridPattern
         width={40}
         height={40}
@@ -50,15 +50,15 @@ export default function HomePage() {
         />
         <div className="space-x-4">
           <Button asChild>
-            <Link href="/Login">Login</Link>
+            <Link href="/pages/Login">Login</Link>
           </Button>
           <Button asChild variant="outline">
-            <Link href="/Register">Register</Link>
+            <Link href="/pages/Register">Register</Link>
           </Button>
         </div>
         <div className="mt-4">
           <Button asChild variant="secondary">
-            <Link href="/Chat">Go to Chat</Link>
+            <Link href="/chat/chatpage">Go to Chat</Link>
           </Button>
         </div>
       </div>
