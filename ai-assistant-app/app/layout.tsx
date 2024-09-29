@@ -1,35 +1,33 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
-import "./globals.css";
+import './globals.css'
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import Link from 'next/link'
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: "Jai",
-  description: "Your AI Assistant",
-};
+  title: 'AI Assistant',
+  description: 'Your personal AI assistant',
+}
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={inter.className}>
+        <nav className="bg-gray-800 text-white p-4">
+          <ul className="flex space-x-4">
+            <li><Link href="/">Home</Link></li>
+            <li><Link href="/pages/Login">Login</Link></li>
+            <li><Link href="/pages/Register">Register</Link></li>
+            <li><Link href="/pages/Chat">Chat</Link></li>
+          </ul>
+        </nav>
         {children}
       </body>
     </html>
-  );
+  )
 }
