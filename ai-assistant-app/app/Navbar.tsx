@@ -1,7 +1,7 @@
 "use client";
 
 // components/Navbar.tsx
-import Link from 'next/link';
+import Link from "next/link";
 
 const Navbar = () => {
   return (
