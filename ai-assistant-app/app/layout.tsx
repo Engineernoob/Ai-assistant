@@ -2,6 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Link from 'next/link'
+import { Button } from "@/components/ui/button"
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,10 +21,10 @@ export default function RootLayout({
       <body className={inter.className}>
         <nav className="bg-gray-800 text-white p-4">
           <ul className="flex space-x-4">
-            <li><Link href="/">Home</Link></li>
-            <li><Link href="/login">Login</Link></li>
-            <li><Link href="/register">Register</Link></li>
-            <li><Link href="/chat">Chat</Link></li>
+            <li><Button asChild variant="ghost"><Link href="/">Home</Link></Button></li>
+            <li><Button asChild variant="ghost"><Link href="/login">Login</Link></Button></li>
+            <li><Button asChild variant="ghost"><Link href="/register">Register</Link></Button></li>
+            <li><Button asChild variant="ghost"><Link href="/chat">Chat</Link></Button></li>
           </ul>
         </nav>
         {children}

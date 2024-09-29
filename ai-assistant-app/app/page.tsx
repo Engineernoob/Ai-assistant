@@ -1,30 +1,22 @@
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export default function HomePage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
       <h1 className="text-4xl font-bold mb-8">Welcome to AI Assistant</h1>
       <div className="space-x-4">
-        <Link
-          href="/login"
-          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-        >
-          Login
-        </Link>
-        <Link
-          href="/register"
-          className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
-        >
-          Register
-        </Link>
+        <Button asChild>
+          <Link href="/login">Login</Link>
+        </Button>
+        <Button asChild variant="outline">
+          <Link href="/register">Register</Link>
+        </Button>
       </div>
       <div className="mt-4">
-        <Link
-          href="/chat"
-          className="px-4 py-2 bg-purple-500 text-white rounded hover:bg-purple-600"
-        >
-          Go to Chat
-        </Link>
+        <Button asChild variant="secondary">
+          <Link href="/chat">Go to Chat</Link>
+        </Button>
       </div>
     </div>
   );
