@@ -4,6 +4,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import AIAssistant from '../page';
 
 const Chat = () => {
   const [message, setMessage] = useState('');
@@ -68,6 +69,6 @@ const Chat = () => {
 };
 
 export default function ChatPage() {
-    return <div>Login Page</div>;
+    return <AIAssistant />;
   }
   
