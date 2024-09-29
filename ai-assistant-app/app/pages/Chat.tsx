@@ -42,7 +42,7 @@ export default function ChatPage() {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.post(
-        "http://localhost:8000/chat",
+        "http://localhost:3000/chat",
         { message: input },
         {
           headers: { Authorization: `Bearer ${token}` },
