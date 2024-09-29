@@ -17,11 +17,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Set up your OpenAI API key using .env
-openai.api_key = os.getenv("OPENAI_API_KEY")
-
-
 # Initialize the OpenAI client
+openai.api_key = os.getenv("OPENAI_API_KEY")
 client = OpenAI()
 
 class Message(BaseModel):
