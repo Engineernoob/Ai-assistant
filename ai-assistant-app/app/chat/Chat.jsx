@@ -7,18 +7,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 
-interface Message {
-  id: number;
-  text: string;
-  sender: 'user' | 'ai';
-}
-
-export default function ChatPage() {
-  const [messages, setMessages] = useState<Message[]>([]);
+export default function Chat() {
+  const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
-  const messagesEndRef = useRef<null | HTMLDivElement>(null);
+  const messagesEndRef = useRef(null);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -29,15 +23,15 @@ export default function ChatPage() {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token) {
-      router.push("/pages/Login");
+      router.push("/login");
     }
-  }, [router]); // Add router to the dependency array
+  }, [router]);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!input.trim()) return;
 
-    const newMessage: Message = { id: Date.now(), text: input, sender: 'user' };
+    const newMessage = { id: Date.now(), text: input, sender: 'user' };
     setMessages(prev => [...prev, newMessage]);
     setInput("");
     setIsLoading(true);
@@ -45,17 +39,16 @@ export default function ChatPage() {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.post(
-        "/api/chat", // Changed from "http://localhost:8000/chat"
+        "/api/chat",
         { message: input },
         {
           headers: { Authorization: `Bearer ${token}` },
         }
       );
-      const aiResponse: Message = { id: Date.now(), text: res.data.response, sender: 'ai' };
+      const aiResponse = { id: Date.now(), text: res.data.response, sender: 'ai' };
       setMessages(prev => [...prev, aiResponse]);
     } catch (error) {
       console.error("Error sending message:", error);
-      // Handle error (e.g., show an error message to the user)
     } finally {
       setIsLoading(false);
     }

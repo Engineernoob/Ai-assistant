@@ -22,7 +22,7 @@ export default function HomePage() {
       setCurrentMessageIndex((prevIndex) => 
         (prevIndex + 1) % welcomeMessages.length
       );
-    }, 5000); // Change message every 5 seconds
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
@@ -50,15 +50,15 @@ export default function HomePage() {
         />
         <div className="space-x-4">
           <Button asChild>
-            <Link href="/pages/Login">Login</Link>
+            <Link href="/login">Login</Link>
           </Button>
           <Button asChild variant="outline">
-            <Link href="/pages/Register">Register</Link>
+            <Link href="/register">Register</Link>
           </Button>
         </div>
         <div className="mt-4">
           <Button asChild variant="secondary">
-            <Link href="/chat/chatpage">Go to Chat</Link>
+            <Link href="/chat">Go to Chat</Link>
           </Button>
         </div>
       </div>
