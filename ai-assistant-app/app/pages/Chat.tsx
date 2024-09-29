@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
-import Link from "next/link";
 
 
 interface Message {
