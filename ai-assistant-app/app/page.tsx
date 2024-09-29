@@ -11,6 +11,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mic, MicOff } from "lucide-react";
+import Link from "next/link"; // For page navigation
+import { useRouter } from "next/navigation"; // For programmatic navigation
 
 interface Message {
   role: "user" | "assistant";
@@ -38,6 +40,7 @@ export default function AIAssistant() {
   const [error, setError] = useState<string | null>(null);
   const [isListening, setIsListening] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const router = useRouter(); // Initialize the router
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -123,6 +126,18 @@ export default function AIAssistant() {
           </CardTitle>
         </CardHeader>
         <CardContent>
+          <div className="flex justify-between mb-4">
+            {/* Navigation links */}
+            <Link href="/register">
+              <Button>Register</Button>
+            </Link>
+            <Link href="/login">
+              <Button>Login</Button>
+            </Link>
+            <Link href="/chat">
+              <Button>Chat Page</Button>
+            </Link>
+          </div>
           <div className="space-y-4 mb-4 h-96 overflow-auto">
             {messages.map((message, index) => (
               <div
