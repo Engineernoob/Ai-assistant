@@ -29,7 +29,7 @@ export default function ChatPage() {
     if (!token) {
       router.push("/pages/Login");
     }
-  }, []);
+  }, [router]); // Add router to the dependency array
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

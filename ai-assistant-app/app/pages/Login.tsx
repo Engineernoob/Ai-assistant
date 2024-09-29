@@ -25,7 +25,7 @@ export default function Login() {
         </button>
       </form>
       <p className="mt-4">
-        Don't have an account?{' '}
+        Don&apos;t have an account?{' '}
         <Link href="/pages/Register" className="text-blue-500 hover:underline">
           Register here
         </Link>
