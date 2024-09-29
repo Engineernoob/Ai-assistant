@@ -1,7 +1,7 @@
 "use client";
 
 // pages/chat.tsx
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 
@@ -38,6 +38,14 @@ const Chat = () => {
       }
     }
   };
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      router.push('/login'); // Redirect to login if not authenticated
+    }
+  }, []);
+  
 
   return (
     <div>
