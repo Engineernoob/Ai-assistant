@@ -67,4 +67,7 @@ const Chat = () => {
   );
 };
 
-export default Chat;
+export default function ChatPage() {
+    return <div>Login Page</div>;
+  }
+  
