@@ -18,8 +18,8 @@ app.add_middleware(
 )
 
 # Initialize the OpenAI client
-openai.api_key = os.getenv("OPENAI_API_KEY")
-client = OpenAI()
+openai.api_key = os.getenv("OPEN_AI_API")
+client = OpenAI(api_key=os.getenv("OPEN_AI_API"))
 
 class Message(BaseModel):
     content: str
