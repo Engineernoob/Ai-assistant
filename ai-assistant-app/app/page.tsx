@@ -7,7 +7,7 @@ import TypingAnimation from "@/components/ui/typing-animation";
 import { GridPattern } from "@/components/ui/grid-pattern";
 
 const welcomeMessages = [
-  "Welcome to AI Assistant",
+  "Welcome to your new AI Assistant",
   "Your Personal AI Companion",
   "Let's Chat and Explore",
   "AI-Powered Conversations",
